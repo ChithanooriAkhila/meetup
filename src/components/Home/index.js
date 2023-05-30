@@ -1,5 +1,6 @@
-import Header from '../Header'
+import {Link} from 'react-router-dom'
 
+import Header from '../Header'
 import MeetupContext from '../../context/MeetupContext'
 
 const Home = props => {
@@ -33,9 +34,11 @@ const Home = props => {
                   src="https://assets.ccbp.in/frontend/react-js/meetup/meetup-img.png"
                   alt="meetup"
                 />
-                <button type="button" onClick={registerNow}>
-                  Register
-                </button>
+                <Link to="/register">
+                  <button type="button" onClick={registerNow}>
+                    Register
+                  </button>
+                </Link>
               </>
             )}
           </div>

@@ -29,7 +29,7 @@ const topicsList = [
 ]
 
 class RegisterRoute extends Component {
-  state = {name: '', topic: '', registerError: false}
+  state = {name: '', topic: topicsList[0].id, registerError: false}
 
   changeUserName = event => {
     this.setState({name: event.target.value})
@@ -91,11 +91,12 @@ class RegisterRoute extends Component {
                       value={name}
                       className="input-field"
                     />
-                    <label htmlFor="topics">Topics</label>
+                    <label htmlFor="topics">TOPICS</label>
                     <select
                       value={topic}
                       onChange={this.changeTopic}
                       className="input-field"
+                      id="topics"
                     >
                       {topicsList.map(t => (
                         <option value={t.id} key={t.id}>
@@ -107,7 +108,7 @@ class RegisterRoute extends Component {
                       Register Now
                     </button>
                     {registerError && (
-                      <p className="error-message">please enter username</p>
+                      <p className="error-message">Please enter your name</p>
                     )}
                   </form>
                 </div>
